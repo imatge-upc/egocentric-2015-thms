@@ -97,7 +97,7 @@ and SGR1219 and SGR1421 founded by AGAUR, Catalunya, Spain. M. Dimiccoli is supp
 
 ## Contact
 
-If you have any general doubt about our work or code which may be of interest for other researchers, please use the [public issues section](https://github.com/imatge-upc/saliency-2016-cvpr/issues) on this github repo. Alternatively, drop us an e-mail at <mailto:xavier.giro@upc.edu>.
+If you have any general doubt about our work or code which may be of interest for other researchers, please use the [issues](https://github.com/imatge-upc/egocentric-2015-thms/issues) section on this github repo. Alternatively, drop us an e-mail at <mailto:xavier.giro@upc.edu>.
 
 <!---
 Javascript code to enable Google Analytics
