@@ -82,13 +82,11 @@ We would like to especially thank Albert Gil Moreno and Josep Pujal from our tec
 [AlbertGil-web]: https://imatge.upc.edu/web/people/albert-gil-moreno
 [JosepPujal-web]: https://imatge.upc.edu/web/people/josep-pujal
 
-This work was partially founded by the projects TEC2013-43935-R and TIN2012-38187-C03-01 founded by MEC, Spain
-and SGR1219 and SGR1421 founded by AGAUR, Catalunya, Spain. M. Dimiccoli is supported by a Beatriu de Pinos` grant (Marie-Curie COFUND action). 
 
 |   |   |
 |:--|:-:|
 |  We gratefully acknowledge the support of [NVIDIA Corporation](http://www.nvidia.com/content/global/global.php) with the donation of the GeoForce GTX [Titan Z](http://www.nvidia.com/gtx-700-graphics-cards/gtx-titan-z/) and [Titan X](http://www.geforce.com/hardware/desktop-gpus/geforce-gtx-titan-x) used in this work. |  ![logo-nvidia] |
-|  The Image ProcessingGroup at UPC (SGR1421) and the Computer Vision Group at UB (SGR1219) are Consolidated Research Groups recognized and sponsored by the Catalan Government (Generalitat de Catalunya) through its [AGAUR](http://agaur.gencat.cat/en/inici/index.html) office. Mariella Dimiccoli is supported by a Beatriu de Pinos grant, Marie-Curie COFUND action. |  ![logo-catalonia] |
+|  The Image Processing Group at UPC (SGR1421) and the Computer Vision Group at UB (SGR1219) are both Consolidated Research Groups recognized and sponsored by the Catalan Government (Generalitat de Catalunya) through its [AGAUR](http://agaur.gencat.cat/en/inici/index.html) office. Mariella Dimiccoli is supported by a Beatriu de Pinos grant, Marie-Curie COFUND action. |  ![logo-catalonia] |
 |  This work has been developed in the framework of the project [BigGraph TEC2013-43935-R](https://imatge.upc.edu/web/projects/biggraph-heterogeneous-information-and-graph-signal-processing-big-data-era-application) and and TIN2012-38187-C03-01, funded by the Spanish Ministerio de Economía y Competitividad and the European Regional Development Fund (ERDF).  | ![logo-spain] | 
 
 [logo-nvidia]: ./logos/nvidia.jpg "Logo of NVidia"
