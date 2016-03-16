@@ -1,19 +1,28 @@
 # Semantic Summarization of Egocentric Photo Stream Events
 
 | ![Xavier Giro-i-Nieto][XavierGiro-photo]  | ![Aniol Lidon][AniolLidon-photo]  | ![Marc Bolaños][MarcBolanos-photo] | ![Marc Carne][MarcCarne-photo] |  ![Mariella Dimiccoli][MariellaDimiccoli-photo] |  ![Petia Radeva][PetiaRadeva-photo]  |
-|:-:|:-:|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|:-:|:-:|
 | [Xavier Giro-i-Nieto][XavierGiro-web]  | Aniol Lidon  | [Marc Bolaños][MarcBolanos-web] | Marc Carné |  [Mariella Dimiccoli][MariellaDimiccoli-web]  | [Petia Radeva](PetiaRadeva-web]    |
+
+[XavierGiro-photo]: ./authors/XavierGiro.jpg "Xavier Giro-i-Nieto"
+[AniolLidon-photo]: ./authors/AnioLidon.jpg "Aniol Lidon"
+[MarcBolanos-photo]: ./authors/MarcBolanos.jpg "Marc Bolaños"
+[MarcCarne-photo]: ./authors/MarcCarne.jpg "Marc Carné"
+[MariellaDimiccoli-photo]: ./authors/MariellaDimiccoli.jpg "Mariella Dimmicoli"
+[PetiaRadeva-photo]: ./authors/PetiaRadeva.jpg "Petia Radeva"
 
 [XavierGiro-web]: https://imatge.upc.edu/web/people/xavier-giro
 [MarcBolanos-web]: http://www.ub.edu/cvub/member/marc-bolanos/
 [Mariella Dimiccoli-web]: http://www.ub.edu/bcnpcl/marielladimiccoli/index.html
 [PetiaRadeva-web]: http://www.cvc.uab.es/~petia/
 
+
+
 A joint collaboration between:
 
 | ![logo-upc] | ![logo-ub] |
 |:-:|:-:|
-| [Image Processing Group at the Universitat Politecnica de Catalunya (UPC)][gpi-web] | [Computer Vision Group at Universitat de Barcelona ][cvub-web] | 
+| [Image Processing Group at the Universitat Politecnica de Catalunya (UPC)][gpi-web] | [Computer Vision Group at Universitat de Barcelona (UB)][cvub-web] | 
 
 [gpi-web]: https://imatge.upc.edu/web/ 
 [cvub-web]: http://www.ub.edu/cvub/
@@ -51,7 +60,9 @@ You may also want to refer to our publication with the more human-friendly Chica
 
 ## Visual Results
 
-![Qualitative saliency predictions](./figs/qualitative.jpg)
+Three examples of the top 5 images obtained before introducing diversity (uneven rows) and after introducing it (even rows).
+
+![Qualitative saliency predictions](./figs/results.png)
 
 
 
@@ -76,8 +87,7 @@ and SGR1219 and SGR1421 founded by AGAUR, Catalunya, Spain. M. Dimiccoli is supp
 |   |   |
 |:--|:-:|
 |  We gratefully acknowledge the support of [NVIDIA Corporation](http://www.nvidia.com/content/global/global.php) with the donation of the GeoForce GTX [Titan Z](http://www.nvidia.com/gtx-700-graphics-cards/gtx-titan-z/) and [Titan X](http://www.geforce.com/hardware/desktop-gpus/geforce-gtx-titan-x) used in this work. |  ![logo-nvidia] |
-|  The Image ProcessingGroup at UPC (SGR1421) and the Computer Vision Group at UB (SGR1219) are Consolidated Research Groups recognized and sponsored by the Catalan Government (Generalitat de Catalunya) through its [AGAUR](http://agaur.gencat.cat/en/inici/index.html) office. . Mariella Dimiccoli is supported by a Beatriu de Pinos grant
-(Marie-Curie COFUND action) |  ![logo-catalonia] |
+|  The Image ProcessingGroup at UPC (SGR1421) and the Computer Vision Group at UB (SGR1219) are Consolidated Research Groups recognized and sponsored by the Catalan Government (Generalitat de Catalunya) through its [AGAUR](http://agaur.gencat.cat/en/inici/index.html) office. Mariella Dimiccoli is supported by a Beatriu de Pinos grant, Marie-Curie COFUND action. |  ![logo-catalonia] |
 |  This work has been developed in the framework of the project [BigGraph TEC2013-43935-R](https://imatge.upc.edu/web/projects/biggraph-heterogeneous-information-and-graph-signal-processing-big-data-era-application) and and TIN2012-38187-C03-01, funded by the Spanish Ministerio de Economía y Competitividad and the European Regional Development Fund (ERDF).  | ![logo-spain] | 
 
 [logo-nvidia]: ./logos/nvidia.jpg "Logo of NVidia"
