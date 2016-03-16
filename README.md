@@ -56,6 +56,7 @@ You may also want to refer to our publication with the more human-friendly Chica
 
 *Lidon, Aniol, Marc Bolaños, Mariella Dimiccoli, Petia Radeva, Maite Garolera, and Xavier Giró-i-Nieto. "Semantic Summarization of Egocentric Photo Stream Events." arXiv preprint arXiv:1511.00438 (2015).*
 
+This work is an extension of the [master thesis](https://imatge.upc.edu/web/publications/semantic-and-diverse-summarization-egocentric-photo-events) by Aniol Lidon for the [Master in Computer Vision Barcelona](http://pagines.uab.cat/mcv/), class of 2015.
 
 
 ## Visual Results
