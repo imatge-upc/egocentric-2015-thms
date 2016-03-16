@@ -2,7 +2,7 @@
 
 | ![Xavier Giro-i-Nieto][XavierGiro-photo]  | ![Aniol Lidon][AniolLidon-photo]  | ![Marc Bolaños][MarcBolanos-photo] | ![Marc Carne][MarcCarne-photo] |  ![Mariella Dimiccoli][MariellaDimiccoli-photo] |  ![Petia Radeva][PetiaRadeva-photo]  |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [Xavier Giro-i-Nieto][XavierGiro-web]  | Aniol Lidon  | [Marc Bolaños][MarcBolanos-web] | Marc Carné |  [Mariella Dimiccoli][MariellaDimiccoli-web]  | [Petia Radeva](PetiaRadeva-web]    |
+| [Xavier Giro-i-Nieto][XavierGiro-web]  | Aniol Lidon  | [Marc Bolaños][MarcBolanos-web] | Marc Carné |  [Mariella Dimiccoli][MariellaDimiccoli-web]  | [Petia Radeva][PetiaRadeva-web]    |
 
 [XavierGiro-photo]: ./authors/XavierGiro.jpg "Xavier Giro-i-Nieto"
 [AniolLidon-photo]: ./authors/AnioLidon.jpg "Aniol Lidon"
@@ -13,7 +13,7 @@
 
 [XavierGiro-web]: https://imatge.upc.edu/web/people/xavier-giro
 [MarcBolanos-web]: http://www.ub.edu/cvub/member/marc-bolanos/
-[Mariella Dimiccoli-web]: http://www.ub.edu/bcnpcl/marielladimiccoli/index.html
+[MariellaDimiccoli-web]: http://www.ub.edu/bcnpcl/marielladimiccoli/index.html
 [PetiaRadeva-web]: http://www.cvc.uab.es/~petia/
 
 
