@@ -22,7 +22,7 @@ A joint collaboration between:
 
 | ![logo-upc] | ![logo-ub] |
 |:-:|:-:|
-| [Image Processing Group at the Universitat Politecnica de Catalunya (UPC)][gpi-web] | [Computer Vision Group at Universitat de Barcelona (UB)][cvub-web] | 
+| [Image Processing Group at Universitat Politecnica de Catalunya (UPC)][gpi-web] | [Computer Vision Group at Universitat de Barcelona (UB)][cvub-web] | 
 
 [gpi-web]: https://imatge.upc.edu/web/ 
 [cvub-web]: http://www.ub.edu/cvub/
