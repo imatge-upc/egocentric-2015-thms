@@ -12,7 +12,7 @@
 [PetiaRadeva-photo]: ./authors/PetiaRadeva.jpg "Petia Radeva"
 
 [XavierGiro-web]: https://imatge.upc.edu/web/people/xavier-giro
-[MarcBolanos-web]: http://www.ub.edu/cvub/member/marc-bolanos/
+[MarcBolanos-web]: http://www.ub.edu/cvub/marcbolanos/
 [MariellaDimiccoli-web]: http://www.ub.edu/bcnpcl/marielladimiccoli/index.html
 [PetiaRadeva-web]: http://www.cvc.uab.es/~petia/
 
