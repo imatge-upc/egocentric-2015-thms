@@ -5,16 +5,17 @@ CAFFE_PATH_OLD =                '/usr/local/caffe-dev/matlab/caffe';
 CAFFE_PATH =                    '/usr/local/caffe-master2/matlab/caffe';
 USE_GPU =                       1;
 
-%input_folder =                  '/media/HDD_2TB/mcarne/keyframe-extractor/db/prova';
-input_folder =                  '/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/Segmentation/22_Crop2';
-output_folder =                 '/media/HDD_2TB/mcarne/keyframe-extractor/paciente/22_perform_03';
-number_segments =               25;
+input_folder = 			'/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/Segmentation/31_Crop2';
+output_folder =			'/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/result_keyframe/31_Crop2';
+%output_folder =                 '/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/result_keyframe/22_Crop2';
+%number_segments =               25;
 
 dbp.imgFolder =                 input_folder;
 dbp.imgFormat =                 'jpg';                                     % Extention of images. jpg | png
 dbp.resize =                    [490 472];
 
-pltp.PercentageImagesShown =    10;                                        %Percentatge de fotos ordenades per temps a mostrar.
+pltp.selection_mode = 'absolute';					   % Summary selection mode 'percentage' | absolute
+pltp.PercentageImagesShown =    10;                                        % Number of images to summarize event (either absolute number or percentage depending on selection_mode).
 pltp.skipPlot =                 false;                                     % Skip writting results
 pltp.resultsFolder =            [output_folder '/results/'];                 % Results folder
 pltp.expName =                  'ImageNetNoDvAverage';                     % Experiment name, empty for date

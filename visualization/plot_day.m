@@ -5,10 +5,13 @@ clc;
 
 main_path=pwd;
 
-source_keyframe = '/media/HDD_2TB/mcarne/keyframe-extractor/paciente/20_perform_03';
-%source_image = '/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/Segmentation/21_Crop2';
-source_image = '/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/2015/10/20_Crop2';
-num_segments = 20;
+source_image =                  '/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/2015/10/31_Crop2';
+source_keyframe =                 '/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/result_keyframe/31_Crop2';
+
+
+output = source_keyframe;
+
+num_segments = 12;
 columns_mosaic = 10;
 
 saltm=0;
@@ -47,7 +50,8 @@ for ii=1:num_segments
             end
 
             if str2num(file_name) < 100000
-                file_name=['0' file_name];
+                %file_name=['0' file_name];
+		file_name = file_name;
             end
 
             path_image = [file_name '.jpg'];
@@ -96,8 +100,10 @@ end
 
 cd(main_path);
 
-disp('Generating final plotting...');
+disp('Generating final plot...');
     
 outImg=concatImages2Dhor('inImgCell',list, 'subVcols', columns_mosaic);
-imshow(outImg);
-%imwrite( outImg, [self.resultsFolder '/' fname]);
+%imshow(outImg);
+imwrite( outImg, [output '/mosaic.jpg']);
+
+disp('Done');

@@ -137,14 +137,26 @@ classdef PlotController < matlab.System
        
                 event = event(1:max);
                 %Si això no ho faig ho ordena per rellevancies
-                
-                for k=1:size(event,2)
-                   vecstr = strsplit(event(k).index,'_');
-                   time(k) = str2double(vecstr(2));
-                end
+               
+	        % only suitable for Narrative pictures
+		if(~isempty(strfind(event(1).index, '_')))
+		    version = 2;
+		else
+		    version = 1;
+		end
+ 
+		if(version == 2)
+                    for k=1:size(event,2)
+                   	vecstr = strsplit(event(k).index,'_');
+                   	time(k) = str2double(vecstr(2));
+                    end
+		else
+		    for k=1:size(event,2)
+                        time(k) = str2double(event(k).index);
+                    end
+		end
                 [~, ind]=sort(time);
-                %[~, ind]=sort([event.index]);
-                event = event(ind);
+		event = event(ind);
             
                 fid = fopen([self.resultsFolder '/results_selected.txt'],'w');
                 for k=1:size(event,2)
