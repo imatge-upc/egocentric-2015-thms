@@ -12,11 +12,27 @@ load_parameters;
     number_segments = length(dir_list);
 
 
-    for seg=1:number_segments
+    % Precompute segments' lengths
+    if(strcmp(pltp.selection_mode, 'absolute_set'))
+        segm_lengths = zeros(1, number_segments);
+        for seg=1:number_segments
+            output_folder_=[output_folder '/Segment_' num2str(seg)];
+            input_folder_=[input_folder '/Segment_' num2str(seg)];
+            dbp.imgFolder =                 input_folder_;
+            [fevent] = getEvent(dbp);
+            segm_lengths(seg) = numel(fevent);
+        end
+        pltp.PercentageImagesShown = pltp.PercentageImagesShown/sum(segm_lengths)*100;
+    end
 
+    % Start summarization
+    for seg=1:number_segments
+        
         output_folder_=[output_folder '/Segment_' num2str(seg)];
         input_folder_=[input_folder '/Segment_' num2str(seg)];
 
+        disp(['Processing Segment_' num2str(seg)]);
+        
         %UPDATED PARAMETERS DUE TO 'FOR' STATEMENT
         dbp.imgFolder =                 input_folder_;
         pltp.resultsFolder =            [output_folder_ '/results/'];
@@ -56,11 +72,11 @@ load_parameters;
 
         % GET FRAMES
         [fevent] = getEvent(dbp);
-	if(strcmp(pltp.selection_mode, 'percentage'))
+        if(strcmp(pltp.selection_mode, 'percentage') || strcmp(pltp.selection_mode, 'absolute_set'))
             Nimages = round(pltp.PercentageImagesShown * numel(fevent)/100);
-	elseif(strcmp(pltp.selection_mode, 'absolute'))
-	    Nimages = min(numel(fevent), pltp.PercentageImagesShown);
-	end
+        elseif(strcmp(pltp.selection_mode, 'absolute'))
+            Nimages = min(numel(fevent), pltp.PercentageImagesShown);
+        end
 
         % PREFILTERING
         pf.compute(fevent);
@@ -68,9 +84,10 @@ load_parameters;
 
 	disp([num2str(length(event)) ' images remaining after filtering.']);
 
-	plt.show(event); % write informative images
-
         if ~isempty(event)
+            
+            plt.show(event); % write informative images
+            
             % LOOP METHODS
             for m = 1: numel(methods)
 
@@ -120,7 +137,7 @@ load_parameters;
 
         else
             %fullSortedList = sevent;
-            disp('### No hi ha res rellevant en aquest segment ###');
+            disp('### There is nothing relevant in this segment ###');
         end
     end
     

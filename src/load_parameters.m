@@ -5,17 +5,16 @@ CAFFE_PATH_OLD =                '/usr/local/caffe-dev/matlab/caffe';
 CAFFE_PATH =                    '/usr/local/caffe-master2/matlab/caffe';
 USE_GPU =                       1;
 
-input_folder = 			'/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/Segmentation/31_Crop2';
-output_folder =			'/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/result_keyframe/31_Crop2';
-%output_folder =                 '/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/result_keyframe/22_Crop2';
+input_folder = 			'/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente2/segmentation_bkcp/25_Crop_hort';
+output_folder =			'/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente2/result_keyframe/25_Crop_hort';
 %number_segments =               25;
 
 dbp.imgFolder =                 input_folder;
 dbp.imgFormat =                 'jpg';                                     % Extention of images. jpg | png
 dbp.resize =                    [490 472];
 
-pltp.selection_mode = 'absolute';					   % Summary selection mode 'percentage' | absolute
-pltp.PercentageImagesShown =    10;                                        % Number of images to summarize event (either absolute number or percentage depending on selection_mode).
+pltp.selection_mode = 'absolute_set';					   % Summary selection mode 'percentage' | 'absolute' | 'absolute_set'
+pltp.PercentageImagesShown =    60;                                        % Number of images to summarize event (either absolute number or percentage depending on selection_mode). If selection_mode=='absolute_set' this number will define the total number of images in the whole set.
 pltp.skipPlot =                 false;                                     % Skip writting results
 pltp.resultsFolder =            [output_folder '/results/'];                 % Results folder
 pltp.expName =                  'ImageNetNoDvAverage';                     % Experiment name, empty for date
@@ -23,9 +22,10 @@ pltp.mosaic.cols =              3;
 
 
 pfp.method =                    'deep';                                    % Prefiltering Method [deep | skip];
-%pfp.deepthresh = 				0.999			   % Deep. Threshold for informativeness
-%pfp.deepthresh = 				0.3;
-pfp.deepthresh =				0.95;  % better threshold w.r.t. Precision-Recall curve
+%pfp.deepthresh = 				0.999;			   % Deep. Threshold for informativeness
+pfp.deepthresh = 				0.3;   % this seems better
+%pfp.deepthresh =				0.95;  % better threshold w.r.t. Precision-Recall curve
+%pfp.deepthresh =                               0.05;
 pfp.deepPath = 					[output_folder '/computed/informative'];    % Deep. Path for informativeness features
 pfp.deepFile = 					'prefiltering_n.mat';				       % Deep. File for informativeness features
 pfp.InfoCNN_params.caffe_path =     CAFFE_PATH;

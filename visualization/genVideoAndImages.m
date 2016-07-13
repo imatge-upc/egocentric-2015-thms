@@ -9,13 +9,13 @@ main_path=pwd;
 %to_remove = [1 4 7 8 11 12 17 23 24 25 27 36 38 39 44 45 46 51 54 58 61 64 69 70 71 77 82 84];
 to_remove = [];
 %im_props = [320 580];
-im_props = [580 580];
+im_props = [700 580];
 
-for dd=[31]
+for dd=[25]
     day=num2str(dd);
 
-    source_image = ['/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/2015/10/' day '_Crop2'];
-    source_keyframe = ['/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente1/Life-logging/result_keyframe/' day '_Crop2'];
+    source_image = ['/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente2/11/' day '_Crop'];
+    source_keyframe = ['/media/My_Book/Datos_Lifelogging/Narrative/Pacientes/Paciente2/result_keyframe/' day '_Crop_hort']
     
     output = [source_keyframe];
     output_images = [output '/Day_' day '_images']; 
@@ -33,7 +33,7 @@ for dd=[31]
     count=1;
 
     outputVideo = VideoWriter(fullfile(output,['Day_' day '.avi']));
-    outputVideo.FrameRate = 0.75; %frame per second
+    outputVideo.FrameRate = 0.4; %frame per second (0.75 first idea) (0.4 = 2.5s per image second idea)
     open(outputVideo)
 
     disp(['Writting... DAY: ' day]);
@@ -70,7 +70,7 @@ for dd=[31]
                 img = imread (image_name);
                 
                 % Prepare image for video
-                 if l==1 && ii==1
+                 if count==1
 %                    imSize=size(img);
 %                    imSize=imSize * percentage_size;
 		     imSize = im_props;
