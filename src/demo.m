@@ -1,4 +1,3 @@
-load_parameters;
 
 %for days=[22]
     
@@ -6,6 +5,7 @@ load_parameters;
     %input_folder_ =                  ['/media/HDD_2TB/R-Clustering/Demo/Plot_Results/' num2str(days) '_Crop'];
     %input_folder_ =                  ['/media/HDD_2TB/mcarne/SR-Clustering/Demo/Plot_Results/MarcCarne_Crop'];
     %output_folder_ =                 ['/media/My_Book/Datos_Lifelogging/Narrative/Txell_MWC/result_keyframe/' num2str(days)];
+
 
     dir_list = dir(input_folder);
     dir_list = dir_list(arrayfun(@(x) x.name(1) ~= '.' && isdir([input_folder '/' x.name]), dir_list));
