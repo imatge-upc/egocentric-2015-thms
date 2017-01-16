@@ -58,6 +58,9 @@ You may also want to refer to our publication with the more human-friendly Chica
 
 This work is an extension of the [master thesis](https://imatge.upc.edu/web/publications/semantic-and-diverse-summarization-egocentric-photo-events) by Aniol Lidon for the [Master in Computer Vision Barcelona](http://pagines.uab.cat/mcv/), class of 2015.
 
+## EDUB-Seg Dataset
+
+The [EDUB-Seg dataset](http://www.ub.edu/cvub/egocentric-dataset-of-the-university-of-barcelona-segmentation-edub-seg/) has been used in this paper. Please cite to [this publication](https://arxiv.org/abs/1512.07143) if you use it. You might also want to check its [project page](https://github.com/MarcBS/SR-Clustering).
 
 ## Visual Results
 
