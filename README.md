@@ -60,7 +60,7 @@ This work is an extension of the [master thesis](https://imatge.upc.edu/web/publ
 
 ## EDUB-Seg Dataset
 
-The [EDUB-Seg dataset](http://www.ub.edu/cvub/egocentric-dataset-of-the-university-of-barcelona-segmentation-edub-seg/) has been used in this paper. Please cite to [this publication](https://arxiv.org/abs/1512.07143) if you use it. You might also want to check its [project page](https://github.com/MarcBS/SR-Clustering).
+The [EDUB-Seg dataset](http://www.ub.edu/cvub/egocentric-dataset-of-the-university-of-barcelona-segmentation-edub-seg/) has been used in this paper. Please cite to [this publication](https://www.researchgate.net/publication/287901747_SR-Clustering_Semantic_Regularized_Clustering_for_Egocentric_Photo_Streams_Segmentation) if you use it. You might also want to check its [project page](https://github.com/MarcBS/SR-Clustering).
 
 ## Visual Results
 
