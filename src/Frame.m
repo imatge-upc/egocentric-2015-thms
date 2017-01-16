@@ -14,6 +14,8 @@ classdef Frame < handle
         skiped;
         resize;
         imagePath;
+        faces_bboxes;
+        faces_poses;
     end
     
     methods
@@ -31,6 +33,8 @@ classdef Frame < handle
             obj.auxinfo.Width =0 ;
             obj.eventid = eventid;
             obj.resize=resize;
+            obj.faces_bboxes = [];
+            obj.faces_poses = [];
         end
         function image = getImage(self)
             %NEW

@@ -1,6 +1,13 @@
-function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_folder, day_name)
+function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_folder, day_name, music_path, to_remove)
 
-    to_remove = [];
+    seconds_per_image = 2.5; %frame per second (0.75 first idea) (0.4 = 2.5s per image second idea)
+
+    if nargin < 5
+        music_path = '';
+    end
+    if nargin < 6
+        to_remove = [];
+    end
     im_props = [700 580];
 
     day=day_name;
@@ -18,11 +25,28 @@ function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_
 
     count=1;
 
-    outputVideo = VideoWriter(fullfile(output,['Day_' day '.avi']));
-    outputVideo.FrameRate = 0.4; %frame per second (0.75 first idea) (0.4 = 2.5s per image second idea)
-    open(outputVideo)
+    % Read music file if any
+    if ~isempty(music_path)
+        [audio_data, sampling_rate] = audioread(music_path);
+        outputVideo = vision.VideoFileWriter(fullfile(output,['Day_' day '.avi']), 'AudioInputPort', true);
+        % length of the audio to be put per frame
+        %val_audio = size(audio_data,1)/nFrames;
+    else
+        outputVideo = vision.VideoFileWriter(fullfile(output,['Day_' day '.avi']));
+    end
+    % Applicable for vision.VideoFileWriter (with audio)
+    outputVideo.Quality = 10; % 0-100 range
+    outputVideo.FrameRate = 2;
+    sampling_rate = round(sampling_rate/outputVideo.FrameRate);
+    times_repeat_imgs = round(outputVideo.FrameRate*seconds_per_image);
+
+    % Applicable for VideoWriter (without audio only)
+    %outputVideo.FrameRate = 1/seconds_per_image;
+    %open(outputVideo)
+
 
     disp(['Writting... DAY: ' day]);
+    count_audio = 1;
 
     %fileID = fopen([source_keyframe '/keyframes.txt'],'w');
 
@@ -47,7 +71,7 @@ function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_
                 
                 if str2num(name_)<100000
                     %name_=['0' name_];
-		    name_ = name_;
+                    name_ = name_;
                 end
                 
                 image_name = [name_ '.jpg'];%Name of the image to add to the video
@@ -59,29 +83,45 @@ function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_
                  if count==1
 %                    imSize=size(img);
 %                    imSize=imSize * percentage_size;
-		     imSize = im_props;
+                    imSize = im_props;
                  end
                  
                  if(sum(count == to_remove))
                     count = count+1;
                     continue
-                end
+                 end
 
-		% Write image to images folder
-		imwrite(img, sprintf([output_images '/%0.5d.jpg'], count));
-		count = count+1;
+                % Write image to images folder
+                imwrite(img, sprintf([output_images '/%0.5d.jpg'], count));
 
                 imgAux = imresize(img,[imSize(1),imSize(2)]); %all the images will be resized to the first image size
-                writeVideo(outputVideo,imgAux)
+                %writeVideo(outputVideo,imgAux)
+                for rep_i = 1:times_repeat_imgs
+                    if ~isempty(music_path)
+                        step(outputVideo, (imgAux), audio_data(sampling_rate*(count_audio-1)+1:sampling_rate*count_audio,:));
+                    else
+                        step(outputVideo, (imgAux));
+                    end
+                count_audio = count_audio+1;
+                end
+
+                count = count+1;
             end
 
         end
 
     end
 
-    close(outputVideo)
 
-    out_name = ['Day_' day '.avi'];
+    release(outputVideo)
+    %close(outputVideo)
+
+    %% Video compression
+    disp('---------- Compressing video and converting to .mp4 ------------');
+    status = system(['ffmpeg -i ' fullfile(output,['Day_' day '.avi']) ' ' fullfile(output,['Day_' day '.mp4'])]);
+    delete(fullfile(output,['Day_' day '.avi']));    
+
+    out_name = ['Day_' day '.mp4'];
 
 disp(['Generating final VIDEO DAY ' day '...']);
 

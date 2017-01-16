@@ -86,7 +86,33 @@ classdef PlotController < matlab.System
             end
             fclose(fid);
         end
-        
+            
+        function per_removed = writePercentageRemoved(self, sevent, event)
+            fid = fopen([self.resultsFolder '/percentage_removed.txt'],'w');
+            total_imgs = length(event) + length(sevent);
+            removed_imgs = length(sevent);
+            per_removed = removed_imgs/total_imgs*100;
+            fprintf(fid,'num kept: %d\n',length(event));
+            fprintf(fid,'num removed: %d\n',removed_imgs);
+            fprintf(fid,'percentage removed: %.2f\n',per_removed);
+            fclose(fid);
+        end
+            
+        function plot_faces(self, event, event_num)
+            fid = fopen([self.resultsFolder '/face_info.txt'],'a');
+            if(event_num == 1)
+                fprintf(fid,'event_id,frame_name,x1,y1,x2,y2,pose\n');
+            end
+            for i = 1:numel(event)
+                for j = 1:size(event(i).faces_bboxes,1)
+                    bs = event(i).faces_bboxes;
+                    pose = event(i).faces_poses;
+                    fprintf(fid,'%d,%d,%d,%d,%d,%d,%d\n',event_num, i, bs(j,1), bs(j,2), bs(j,3), bs(j,4), pose(j));
+                end
+            end
+            fclose(fid);
+        end
+            
         function show(self,event)
             fid = fopen([self.resultsFolder '/results.txt'],'w');
             %fprintf(fid, 'image %d: %d \n', [1:numel(event); [event.index]]);
@@ -138,25 +164,25 @@ classdef PlotController < matlab.System
                 event = event(1:max);
                 %Si això no ho faig ho ordena per rellevancies
                
-	        % only suitable for Narrative pictures
-		if(~isempty(strfind(event(1).index, '_')))
-		    version = 2;
-		else
-		    version = 1;
-		end
- 
-		if(version == 2)
+                % only suitable for Narrative pictures
+                if(~isempty(strfind(event(1).index, '_')))
+                    version = 2;
+                else
+                    version = 1;
+                end
+
+                if(version == 2)
+                            for k=1:size(event,2)
+                            vecstr = strsplit(event(k).index,'_');
+                            time(k) = str2double(vecstr(2));
+                            end
+                else
                     for k=1:size(event,2)
-                   	vecstr = strsplit(event(k).index,'_');
-                   	time(k) = str2double(vecstr(2));
-                    end
-		else
-		    for k=1:size(event,2)
-                        time(k) = str2double(event(k).index);
-                    end
-		end
-                [~, ind]=sort(time);
-		event = event(ind);
+                                time(k) = str2double(event(k).index);
+                            end
+                end
+                        [~, ind]=sort(time);
+                event = event(ind);
             
                 fid = fopen([self.resultsFolder '/results_selected.txt'],'w');
                 for k=1:size(event,2)

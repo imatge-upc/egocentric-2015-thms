@@ -111,6 +111,10 @@ classdef FacesSorter < matlab.System
 
                     auxInf = [sprintf('ev: %g \t| frame: %g \t|  faces: %g \t| weight: %g \t|  pose: [', event(i).eventid, event(i).index, numel(bs), event(i).weight) sprintf('%g ', pose) sprintf('] \t| conf: [') sprintf('%g ', ls) sprintf('] \n')]; 
 
+                    % Store found bboxes in frame
+                    event(i).faces_bboxes = boxes;
+                    event(i).faces_poses = pose;
+
                     if isfield(self.plt, 'debug')&& self.plt.debug
                        fprintf(auxInf);
                     end

@@ -98,5 +98,7 @@ mthdp.objectsLSDA.deepPath =     [output_folder '/computed/LDSA'];      % Path o
 mthdp.objectsLSDA.deepFile =     'LSDAfeatures_n.mat';                   % Filename of features {except Feature = pixel}
 mthdp.objectsLSDA.lsda_path =    '/media/HDD_2TB/marc/LSDA/jhoffman-lsda-b54cafd';
 mthdp.objectsLSDA.caffe_path = CAFFE_PATH;
+mthdp.objectsLSDA.imgFormat =    dbp.imgFormat;
+
 mthdp.affective.FeatsPath =    '../precomputed/$DSETNAME/Affective/';      % Path of features {except Feature = pixel} << Allows $DSETNAME >>
 mthdp.affective.FeatsFile =    'Affectivefeatures_n.mat';                  % Filename of features {except Feature = pixel}

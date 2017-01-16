@@ -1,5 +1,5 @@
 %MAinPrefiltering2
-clear;
+clear variables;
 addpath('Test_Informative_Detector');
 
 %%

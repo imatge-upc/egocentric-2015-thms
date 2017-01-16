@@ -82,7 +82,9 @@
         pf.compute(fevent);
         [sevent, event] = pf.filter(fevent);
 
-	disp([num2str(length(event)) ' images remaining after filtering.']);
+        disp([num2str(length(event)) ' images remaining after filtering.']);
+        per_removed = plt.writePercentageRemoved(sevent, event);
+        disp(['The percentage of images removed is ' num2str(per_removed) '%']);
 
         if ~isempty(event)
             
@@ -100,6 +102,10 @@
                 % ADD EVENT TO FUSION
                 fs.add(sortedList);
 
+                if(strcmp(methods{m}, 'faces'))
+                    plt.plot_faces(event, seg)
+                end
+
             end;
 
             % FUSION METHODS
@@ -109,31 +115,37 @@
             ds.compute(event);
             sortedList = dv.diverse(sortedList);
             
-	    % MERGE
+            % MERGE
             fullSortedList = [sortedList, sevent];
 
             % FULL DAY
 
 
-        %Aqui anava el else
+            %Aqui anava el else
 
-        % PLOT EVENT
-
-
-        plt.show(sortedList);
-        plt.show_full(fullSortedList);
-        %plt.write(fullSortedList, 0, 'fusion', Nimages);
-        if numel(sortedList)>=5
-            if Nimages<numel(sortedList)
+            % Keep only first Nimages
+            Nimages = min(Nimages, numel(sortedList));
+            disp(['Keeping only first ' num2str(Nimages) ' images']);
+            sortedList = sortedList(1:Nimages);
+            
+            % PLOT EVENT
+            plt.show(sortedList);
+            plt.show_full(fullSortedList);
+            if(Nimages > 0)
                 plt.write(sortedList, 0, 'fusion', Nimages);
-            else 
-                plt.write(sortedList, 0, 'fusion', numel(sortedList));
             end
-        else
-            plt.write(sortedList, 0, 'fusion', numel(sortedList));
-        end
+            %plt.write(fullSortedList, 0, 'fusion', Nimages);
+%             if numel(sortedList)>=5
+%                 if Nimages<numel(sortedList)
+%                     plt.write(sortedList, 0, 'fusion', Nimages);
+%                 else 
+%                     plt.write(sortedList, 0, 'fusion', numel(sortedList));
+%                 end
+%             else
+%                 plt.write(sortedList, 0, 'fusion', numel(sortedList));
+%             end
 
-        plt.close();
+            plt.close();
 
         else
             %fullSortedList = sevent;
