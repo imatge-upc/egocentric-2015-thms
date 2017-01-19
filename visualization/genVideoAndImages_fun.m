@@ -29,6 +29,7 @@ function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_
     if ~isempty(music_path)
         [audio_data, sampling_rate] = audioread(music_path);
         outputVideo = vision.VideoFileWriter(fullfile(output,['Day_' day '.avi']), 'AudioInputPort', true);
+        len_audio = size(audio_data,1);
         % length of the audio to be put per frame
         %val_audio = size(audio_data,1)/nFrames;
     else
@@ -37,7 +38,7 @@ function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_
     % Applicable for vision.VideoFileWriter (with audio)
     outputVideo.Quality = 10; % 0-100 range
     outputVideo.FrameRate = 2;
-    sampling_rate = round(sampling_rate/outputVideo.FrameRate);
+    sampling_rate = floor(sampling_rate/outputVideo.FrameRate);
     times_repeat_imgs = round(outputVideo.FrameRate*seconds_per_image);
 
     % Applicable for VideoWriter (without audio only)
@@ -98,6 +99,9 @@ function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_
                 %writeVideo(outputVideo,imgAux)
                 for rep_i = 1:times_repeat_imgs
                     if ~isempty(music_path)
+                        if(len_audio < sampling_rate*count_audio) % Start song from the beginning if we arrived to the end
+                            count_audio = 1;
+                        end
                         step(outputVideo, (imgAux), audio_data(sampling_rate*(count_audio-1)+1:sampling_rate*count_audio,:));
                     else
                         step(outputVideo, (imgAux));
@@ -118,7 +122,7 @@ function out_name = genVideoAndImages_fun(source_image, source_keyframe, output_
 
     %% Video compression
     disp('---------- Compressing video and converting to .mp4 ------------');
-    status = system(['ffmpeg -i ' fullfile(output,['Day_' day '.avi']) ' ' fullfile(output,['Day_' day '.mp4'])]);
+    status = system(['ffmpeg -y -i ' fullfile(output,['Day_' day '.avi']) ' ' fullfile(output,['Day_' day '.mp4'])]);
     delete(fullfile(output,['Day_' day '.avi']));    
 
     out_name = ['Day_' day '.mp4'];
