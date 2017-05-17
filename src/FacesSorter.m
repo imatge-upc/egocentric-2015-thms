@@ -90,7 +90,7 @@ classdef FacesSorter < matlab.System
 
                         % Compute bounding box and pose && data in arrays
                         bs = repairboxes(bs, self.posemap);
-                        boxes = reshape([bs(:).box],[numel(bs),4]);
+                        boxes = reshape([bs(:).box],[numel(bs),4]); %revisar esta linea. boxes deben ser en formato Xmin,Ymin,Xmax,Ymax
                         pose = [bs.pose];
                         ls = [bs.s];
 
