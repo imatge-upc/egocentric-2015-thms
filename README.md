@@ -17,7 +17,6 @@
 [PetiaRadeva-web]: http://www.cvc.uab.es/~petia/
 
 
-
 A joint collaboration between:
 
 | ![logo-upc] | ![logo-ub] |
@@ -29,6 +28,8 @@ A joint collaboration between:
 
 [logo-upc]: ./logos/upc.jpg "Universitat Politecnica de Catalunya"
 [logo-ub]: ./logos/ub.png "Universitat de Barcelona"
+
+Accepted as oral presentation in the [2nd Lifelogging Tools and Applications Workshop (LTA'17)](http://lta2017.computing.dcu.ie/) in [ACM Multimedia 2017](http://www.acmmm.org/2017/).
 
 
 ## Abstract
@@ -44,17 +45,21 @@ An [arXiv pre-print](http://arxiv.org/abs/1511.00438) is already available.
 Please cite with the following Bibtex code:
 
 ````
-@article{lidon2015semantic,
+@inproceedings{lidon2017semantic,
   title={Semantic Summarization of Egocentric Photo Stream Events},
   author={Lidon, Aniol and Bola{\~n}os, Marc and Dimiccoli, Mariella and Radeva, Petia and Garolera, Maite and Gir{\'o}-i-Nieto, Xavier},
-  journal={arXiv preprint arXiv:1511.00438},
-  year={2015}
+  booktitle = {Proceedings of the Second Workshop on Lifelogging Tools and Applications},
+  series = {LTA '17},
+  year={2017}
+  location = {Mountain View, CA, USA},
+  publisher = {ACM},
+ address = {New York, NY, USA}
 }
 ```
 
-You may also want to refer to our publication with the more human-friendly Chicago style:
+You may also want to refer to our publication with the more human-friendly style:
 
-*Lidon, Aniol, Marc Bolaños, Mariella Dimiccoli, Petia Radeva, Maite Garolera, and Xavier Giró-i-Nieto. "Semantic Summarization of Egocentric Photo Stream Events." arXiv preprint arXiv:1511.00438 (2015).*
+*Lidon, Aniol, Marc Bolaños, Mariella Dimiccoli, Petia Radeva, Maite Garolera, and Xavier Giró-i-Nieto. "Semantic Summarization of Egocentric Photo Stream Events." In Proceedings of the second Workshop on Lifelogging Tools and Applications (LTA '17). ACM, New York, NY, USA.*
 
 This work is an extension of the [master thesis](https://imatge.upc.edu/web/publications/semantic-and-diverse-summarization-egocentric-photo-events) by Aniol Lidon for the [Master in Computer Vision Barcelona](http://pagines.uab.cat/mcv/), class of 2015.
 
