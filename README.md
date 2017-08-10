@@ -1,19 +1,21 @@
 # Semantic Summarization of Egocentric Photo Stream Events
 
-| ![Xavier Giro-i-Nieto][XavierGiro-photo]  | ![Aniol Lidon][AniolLidon-photo]  | ![Marc Bolaños][MarcBolanos-photo] | ![Marc Carne][MarcCarne-photo] |  ![Mariella Dimiccoli][MariellaDimiccoli-photo] |  ![Petia Radeva][PetiaRadeva-photo]  |
+| ![Xavier Giro-i-Nieto][XavierGiro-photo]  | ![Aniol Lidon][AniolLidon-photo]  | ![Marc Bolaños][MarcBolanos-photo] | ![Maite Garolera][MaiteGarolera-photo] |  ![Mariella Dimiccoli][MariellaDimiccoli-photo] |  ![Petia Radeva][PetiaRadeva-photo]  |
 |:-:|:-:|:-:|:-:|:-:|:-:|
-| [Xavier Giro-i-Nieto][XavierGiro-web]  | Aniol Lidon  | [Marc Bolaños][MarcBolanos-web] | Marc Carné |  [Mariella Dimiccoli][MariellaDimiccoli-web]  | [Petia Radeva][PetiaRadeva-web]    |
+| [Xavier Giro-i-Nieto][XavierGiro-web]  | Aniol Lidon  | [Marc Bolaños][MarcBolanos-web] | [Maite Garolera][MaiteGarolera-web] |  [Mariella Dimiccoli][MariellaDimiccoli-web]  | [Petia Radeva][PetiaRadeva-web]    |
 
 [XavierGiro-photo]: ./authors/XavierGiro.jpg "Xavier Giro-i-Nieto"
 [AniolLidon-photo]: ./authors/AnioLidon.jpg "Aniol Lidon"
 [MarcBolanos-photo]: ./authors/MarcBolanos.jpg "Marc Bolaños"
 [MarcCarne-photo]: ./authors/MarcCarne.jpg "Marc Carné"
+[MaiteGarolera-photo]: ./authors/MaiteGarolera-160x160.jpg "Maite Garolera"
 [MariellaDimiccoli-photo]: ./authors/MariellaDimiccoli.jpg "Mariella Dimmicoli"
 [PetiaRadeva-photo]: ./authors/PetiaRadeva.jpg "Petia Radeva"
 
 [XavierGiro-web]: https://imatge.upc.edu/web/people/xavier-giro
 [MarcBolanos-web]: http://www.ub.edu/cvub/marcbolanos/
 [MariellaDimiccoli-web]: http://www.ub.edu/bcnpcl/marielladimiccoli/index.html
+[MaiteGarolera-web]: http://neuropsicologiacst.cat/people.html
 [PetiaRadeva-web]: http://www.cvc.uab.es/~petia/
 
 
