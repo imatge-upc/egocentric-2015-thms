@@ -46,7 +46,7 @@ An [arXiv pre-print](http://arxiv.org/abs/1511.00438) is already available.
 
 Please cite with the following Bibtex code:
 
-````
+```
 @inproceedings{lidon2017semantic,
   title={Semantic Summarization of Egocentric Photo Stream Events},
   author={Lidon, Aniol and Bola{\~n}os, Marc and Dimiccoli, Mariella and Radeva, Petia and Garolera, Maite and Gir{\'o}-i-Nieto, Xavier},
